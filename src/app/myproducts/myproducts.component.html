@@ -1,0 +1,62 @@
+<br><br>
+<h4 style="text-align: center;">My products</h4>
+ <div class="container">
+    <div class="body">
+      <button class="btn btn-primary" type="button" style="float: right;" data-bs-toggle="modal" data-bs-target="#exampleModal">Add products</button>
+      <br>
+      <br>
+        <div class="row">
+           <div class="col" *ngFor="let item of dataArray">
+           
+           
+                <div class="card" style="width: 18rem;" *ngIf="Uid===item.uid">
+                    <img [src]="item.image" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{item.title}}</h5>
+                      <p class="card-text">{{item.description}}</p>
+                    
+                      <button class="btn btn-danger" (click)="delete(item.id)">Delete</button>
+                      <button class="btn btn-info" (click)="Update()">Update</button>
+                    </div>
+                </div>              
+          
+               
+            </div>
+            
+        </div>
+    </div>
+   
+ </div>
+
+ <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form #f="ngForm" (ngSubmit)="addproduct(f)">
+          <div class="row">
+            <div>
+              <input type="text" class="form-control" placeholder="Title" placeholder="Title:" name="title" #title="ngModel" ngModel>
+            </div>
+            <br>
+            <div>
+              <textarea class="form-control" cols="30" rows="10" placeholder="Description" name="description" #description="ngModel" ngModel></textarea>
+            </div>
+            <br>
+            <div>
+              <input type="text" class="form-control" placeholder="Title" placeholder="Image" name="image" #image="ngModel" ngModel>
+            </div>
+            
+          </div>
+          <div class="alert alert-success" *ngIf="successMessage">{{successMessage}}</div>
+          <br>
+          <button class="btn btn-success">Add Product</button>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+</div>

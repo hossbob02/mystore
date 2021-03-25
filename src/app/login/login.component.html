@@ -1,0 +1,32 @@
+
+
+    <div class="uk-position-center uk-overlay uk-overlay-default">
+        
+        
+        <form #f="ngForm" (ngSubmit)="login(f)">
+
+        <div class="uk-margin">
+            <div class="uk-inline">
+                <span class="uk-form-icon" uk-icon="icon: user"></span>
+                <input class="uk-input" type="text" #email="ngModel" ngModel name="email">
+            </div>
+        </div>
+    
+        <div class="uk-margin">
+            <div class="uk-inline">
+                <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+                <input class="uk-input" type="password"  #password="ngModel" ngModel name="password">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success" style="width: 100%;">Login</button>
+        <div class="alert alert-danger" *ngIf="messageError">{{messageError}}</div>
+        <br>
+        <br>
+        <button type="submit" class="btn btn-info" style="width: 100%;">Forget</button>
+    
+    </form>
+
+
+
+    </div>
+

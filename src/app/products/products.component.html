@@ -1,0 +1,22 @@
+<br>
+<br>
+<h4 style="text-align: center;">All products</h4>
+ <div class="container">
+    <div class="body">
+      <div class="row">
+        <div class="col" *ngFor="let item of dataArray">
+            
+                <div class="card" style="width: 18rem;">
+                    <img [src]="item.image" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{item.title}}</h5>
+                      <p class="card-text">{{item.description}}</p>
+                      <a class="btn btn-primary" (click)="detail(item.id)">Details</a>
+                    </div>
+                  </div>              
+          
+         </div>
+     </div>
+    </div>
+ </div>
+
